@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}Update Medicine{% endblock %}
+
+{% block breadcrumb %}
+  <ol class="breadcrumb float-right">
+      <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+      <li class="breadcrumb-item"><a href="{% url 'my_medicine' %}">My Medicine</a></li>
+      <li class="breadcrumb-item active">Update Medicine</li>
+    </ol>
+{% endblock %}
+
+{% block content %}
+{% if medicine.medicine_added_by == request.user %}
+	<form method="POST" class="update_medicine"> 
+        <!-- Security token by Django -->
+        {% csrf_token %} 
+  
+        <!-- form as paragraph -->
+        {{ form.as_p }} 
+        <div class="text-center">
+          <input type="submit" value="Update"> 
+       </div>
+    </form>
+{% else %}
+	<p>You are not authorized to edit this medicine.</p>
+{% endif %}
+
+{% endblock %}

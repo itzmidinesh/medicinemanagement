@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}Delete Medicine{% endblock %}
+
+{% block breadcrumb %}
+	<ol class="breadcrumb float-right">
+  		<li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+      <li class="breadcrumb-item"><a href="{% url 'my_medicine' %}">My Medicine</a></li>
+  		<li class="breadcrumb-item active">Delete Medicine</li>
+  	</ol>
+{% endblock %}
+
+
+{% block content %}
+{% if medicine.medicine_added_by == request.user %}
+	<form action="" method="post" class="delete_medicine">
+		{% csrf_token %}
+	    <p>Are you sure you want to delete "{{ medicine }}"?</p>
+	    <input type="submit" value="Confirm" />
+	</form>
+{% else %}
+	<p>You are not authorized to delete this medicine.</p>
+{% endif %}
+
+{% endblock content %}

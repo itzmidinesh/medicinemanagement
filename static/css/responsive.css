@@ -1,0 +1,33 @@
+@media only screen and (max-width: 991px) {
+	.nav_flo_rgt_desktop {
+		display: none;
+	}
+	.nav_flo_rgt_mobile {
+	    display: block;
+	}
+	.container {
+	    max-width: 98%;
+	}
+	.nav_flo_rgt_mobile li a {
+		font-size: 1.7rem;
+	}
+	.navbar-brand {
+		font-size: 1.9rem;
+	}
+	.navbar {
+		padding: 1rem 1rem;
+	}
+	#navbarSupportedContent ul > li {
+		padding: 10px 0 0;
+		font-size: 1.7rem;
+	}
+	#navbarSupportedContent ul > li a { 
+		font-size: 1.7rem;
+	}
+	footer p {
+		font-size: 1.7rem;
+	}
+	.home_contact {
+		font-size: 1.7rem;
+	}
+}

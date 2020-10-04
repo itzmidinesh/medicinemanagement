@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&family=Titillium+Web:wght@400;600;700&display=swap');
+body {
+    font-family: 'Roboto', sans-serif;
+    /*font-family: 'Titillium Web', sans-serif;*/
+}
+.update_medicine label {
+    display: block;
+    font-size: 18px;
+}
+.update_medicine input {
+    width: 100%;
+	padding: 8px 20px;
+}
+.update_medicine input[type="submit"] {
+    width: auto;
+    margin-top: 20px;
+    background: #111;
+    border: 1px solid #111;
+    color: #fff;
+    font-size: 18px;
+    padding: 8px 20px;
+}
+.nav_flo_rgt {
+    display: inline-block;
+}
+.nav_flo_rgt li {
+    float: left;
+    margin-right: 15px;
+}
+.navbar-dark .navbar-toggler {
+    border-color: rgba(255, 255, 255, 1);
+}
+.navbar-dark .navbar-nav .nav-link {
+    color: rgba(255, 255, 255, 1);
+}
+
+.nav_flo_rgt_mobile {
+    display: none;
+}
+
+body {
+  background-image: url(../img/shattered.png);
+}
+
+body {
+  background-image: url(../img/shattered.png);
+}
+
+.logo {
+  font-family: 'Peralta', cursive;
+}
+
+.logo a {
+  color: rgba(0,0,0,.9);
+}
+
+.logo a:hover,
+.logo a:active {
+  text-decoration: none;
+}
+
+.delete_medicine input[type="submit"] {
+    width: auto;
+    margin-top: 20px;
+    background: #111;
+    border: 1px solid #111;
+    color: #fff;
+    font-size: 18px;
+    padding: 8px 20px;
+}
+
+.bg-dark {
+    margin-bottom: 20px;
+}
+footer {
+    position: absolute;
+    bottom: 0;
+    background: #343a40;
+    width: 100%;
+    text-align: center;
+}
+footer p { 
+    margin-bottom: 0;
+    color: #fff;
+    padding: 15px 0;
+}
+.home_contact {
+    font-size: 1.5rem;
+}
+.navbar-brand {
+    padding-top: 0;
+    padding-bottom: 3px;
+}

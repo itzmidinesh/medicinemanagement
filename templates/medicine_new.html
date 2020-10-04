@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}Add a New Medicine{% endblock %}
+
+{% block breadcrumb %}
+	<ol class="breadcrumb float-right">
+  		<li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+      <li class="breadcrumb-item"><a href="{% url 'my_medicine' %}">My Medicine</a></li>
+  		<li class="breadcrumb-item active">Add Medicine</li>
+  	</ol>
+{% endblock %}
+
+{% block content %}
+  <form method="post" class="mb-4" novalidate>
+    {% csrf_token %}
+    {% include 'includes/form.html' %}
+    <button type="submit" class="btn btn-success">Add Medicine</button>
+  </form>
+  <p> The medicine will be added to {{request.user.profile.shop_name}} list </p>
+{% endblock %}

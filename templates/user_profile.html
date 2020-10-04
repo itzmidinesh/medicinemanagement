@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+{% block title %}{{userprofile.first_name}} {{userprofile.last_name}}'s profile details{% endblock %}
+
+{% block content %}
+	{% if request.user == userprofile  %}
+		<div class="table-responsive"><!--profile-user-info-->
+
+			<table class="table table-striped table-dark">
+				<tbody>
+					<tr>
+						<td>Username</td>
+						<td>{{ userprofile.username }}</td>	
+					</tr>
+					<tr>
+						<td>Email</td>
+						<td>{{ userprofile.email }}</td>	
+					</tr>
+					<tr>
+						<td>First Name</td>
+						<td>{{ userprofile.first_name }}</td>	
+					</tr>
+					<tr>
+						<td>Last Name</td>
+						<td>{{ userprofile.last_name }}</td>	
+					</tr>
+					<tr>
+						<td>Mobile</td>
+						<td>{{userprofile.profile.mobile_number}}</td>	
+					</tr>
+					<tr>
+						<td>Shop Name</td>
+						<td>{{userprofile.profile.shop_name}}</td>	
+					</tr>
+					<tr>
+						<td>License No.</td>
+						<td>{{userprofile.profile.license1}}</td>	
+					</tr>
+					<tr>
+						<td>License No.</td>
+						<td>{{userprofile.profile.license2}}</td>	
+					</tr>
+					<tr>
+						<td>Shop Address</td>
+						<td>{{userprofile.profile.shop_address}}</td>	
+					</tr>
+					<tr>
+						<td>Shop Area</td>
+						<td>{{userprofile.profile.shop_area}}</td>	
+					</tr>
+					<tr>
+						<td>Shop Town</td>
+						<td>{{userprofile.profile.shop_locality}}</td>	
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<p>Please contact Divakar at <a href="tel:+919894861100">+919894861100</a> to change any of the above details.</p>
+	{% else %}
+		<p>You are not authorized to view this profile.</p>
+	{% endif %}
+{% endblock %}

@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+
+
+{% block breadcrumb %}
+  <li class="breadcrumb float-right">
+    <a class="btn btn-primary" href="{% url 'medicine_new' %}"> Add Medicine</a>
+  </li>
+{% endblock breadcrumb %}
+
+{% block title %} {{ request.user.profile.shop_name }} Medicine List {% endblock title %}
+
+{% block content %}
+<div class="table-responsive">
+  <table id='medicinetable' class="table table-bordered table-striped table-dark" data-page-length='100'>
+    <thead class="thead-dark">
+      <tr>
+        <th>S/N</th>
+        <th>Medicine name</th>
+        <th>Quantity</th>
+        <th>Price</th>
+        <th>Expiry Date</th>
+        <th>Shop Name</th>
+        <th>Change Entry</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for medicine in medicines %}
+        <tr class='clickable-row' data-href="{% url 'medicine_update' medicine.pk %}">
+          <td>{{ forloop.counter }}</td>
+          <td>{{ medicine.medicine_name}}</td>
+          <td>{{ medicine.medicine_quantity }}</td>
+          <td>Rs. {{ medicine.medicine_price }}</td>
+          <td>{{ medicine.expiry_date|date:"dS M, Y" }}</td>      
+          <td>{{ medicine.medicine_added_by.profile.shop_name }}</td>
+          <td><a href="{% url 'medicine_delete' medicine.pk %}">Delete Entry</a></td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock content %}
+  {% block morejs %}
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $('#medicinetable').DataTable();
+    } );
+  </script>
+  {% endblock morejs %}
